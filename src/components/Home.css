@@ -1,0 +1,20 @@
+.main{
+    display: flex;
+    height: 100vh;
+}
+
+.left{
+    width:20%;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+.right {
+    width: 80%;
+    background-color: #DAE5F5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
