@@ -301,8 +301,8 @@ button.enabled {
 .note-edit-textarea {
   width: 99%;
   min-height: 100px;
-  padding: 12px;
-  padding-right: 40px;
+  /* padding: 12px;
+  padding-right: 40px; */
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 16px;
