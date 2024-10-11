@@ -118,8 +118,8 @@ body {
   width: 280px;
   font-size: 1.15rem;
 }
-.Cname{
-   font-size: 1.15rem;
+.Cname {
+  font-size: 1.15rem;
 }
 
 .close-button {
@@ -245,10 +245,13 @@ body {
 }
 .note-input-container textarea {
   position: fixed;
-  width: 71.7%;
+  width: 70.7%;
   bottom: 0px;
   display: flex;
+  border-radius: 0%;
   border: 12px solid #001f8b;
+  border-left: 18px solid #001f8b;
+  border-right: 18px solid #001f8b;
   align-items: center;
 }
 
@@ -389,6 +392,10 @@ button.enabled {
   }
   .Cname {
     font-size: 0.8rem;
+  }
+  .color-circle {
+    width: 11px;
+    height: 11px;
   }
   .groupheader {
     font-size: 0.8rem;
