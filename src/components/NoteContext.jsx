@@ -47,16 +47,16 @@ useEffect(() => {
 }, [selectedGroup]);
 
 
-  useEffect(() => {
-    localStorage.setItem('noteGroups', JSON.stringify(groups));
-  }, [groups]);
+  // useEffect(() => {
+  //   localStorage.setItem('noteGroups', JSON.stringify(groups));
+  // }, [groups]);
 
-  useEffect(() => {
-    if (selectedGroup) {
-      const savedNotes = JSON.parse(localStorage.getItem(`notes_${selectedGroup.id}`)) || [];
-      setNotes(savedNotes);
-    }
-  }, [selectedGroup]);
+  // useEffect(() => {
+  //   if (selectedGroup) {
+  //     const savedNotes = JSON.parse(localStorage.getItem(`notes_${selectedGroup.id}`)) || [];
+  //     setNotes(savedNotes);
+  //   }
+  // }, [selectedGroup]);
 
   useEffect(() => {
     if (selectedGroup && notes.length > 0) {
@@ -77,13 +77,15 @@ useEffect(() => {
     if (groupName.trim() !== "") {
       const initials = getGroupInitials(groupName);
     const newGroup = {
-      id: Date.now(),
+      // id: Date.now(),
+      id:`group_${Date.now()}`,
       name: groupName,
       color: color,  
       initials: initials,
       createdAt: new Date().toISOString(),
     };
-    setGroups([...groups, newGroup]);
+    // setGroups([...groups, newGroup]);
+    setGroups(prevGroups => [...prevGroups, newGroup]); 
   }
   };
 
