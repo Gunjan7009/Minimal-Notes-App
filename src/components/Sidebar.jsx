@@ -27,12 +27,12 @@ export const Modal = ({ isOpen, title, children, onClose }) => {
 export const GroupList = () => {
   const { groups, selectedGroup, setSelectedGroup } = useNotes();
   if (!groups) return null;
-  const safeGroups = Array.isArray(groups) ? groups : [];
+ const safeGroups = Array.isArray(groups) ? groups.filter(group => group && group.id) : [];
   return (
     <div className="group-list">
       {safeGroups.map((group) => (
         <div
-          key={group.id}
+          key={`group_${group.id}`}
           onClick={() => setSelectedGroup(group)}
           className={`group-item ${
             selectedGroup?.id === group.id ? "selected" : ""
@@ -53,7 +53,7 @@ export const GroupList = () => {
               fontSize: "16px",
             }}
           >
-            {group.initials}
+            {group.initials || '?'}
           </div>
           <div className="group-name">{group.name}</div>
         </div>
